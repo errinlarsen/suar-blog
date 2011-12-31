@@ -1,9 +1,9 @@
 %article
   %header
     %h1
-      %a(href=#{url(article.slug)})
+      %a{ href: url(article.slug) }
         = article.title
-      %time.timeago(datetime=#{article.date.xmlschema})
+      %time.timeago{ datetime: article.date.xmlschema }
         = article.date.strftime "%Y/%m/%d"
   %section.content
     = markdown article.content

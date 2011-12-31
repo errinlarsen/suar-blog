@@ -3,6 +3,7 @@ require "github_hook"
 require "ostruct"
 require "time"
 require "haml"
+require "redcarpet"
 
 class Blog < Sinatra::Base
   use GithubHook
