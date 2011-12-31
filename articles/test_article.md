@@ -6,3 +6,6 @@ Had this been a real article, cool stuff would be written here.
 
 ### Another test
 Just added something so I have something to push/pull
+
+### Third test
+for debugging
