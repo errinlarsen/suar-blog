@@ -1,5 +1,5 @@
 title: Installing the server - part 1
-date: 2011-12-30
+date: 2011-12-31
 
 ## Rackspace
 I created an account with [Rackspace](http://www.rackspace.com/) and started up the smallest server they offer.  The technical details are:
