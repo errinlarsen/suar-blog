@@ -31,8 +31,9 @@ class GithubHook < Sinatra::Base
     content_type :txt
     if settings.autopull?
       # Pipe stderr to stdout to make sure we display everything
-      cmd_output = `git pull 2>&1`
       puts "\nTrying to `git pull 2>&1` ..."
+      cmd_output = `git pull 2>&1`
+      puts "`git pull 2>&1` reports:\n#{cmd_output}"
       cmd_output
     else
       "ok"
