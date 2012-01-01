@@ -1,5 +1,5 @@
 title: Test article
-date: 2011-12-31
+date: 2011-12-31 9am
 
 ## This is only a test
 Had this been a real article, cool stuff would be written here.
