@@ -30,7 +30,7 @@ class Blog < Sinatra::Base
 
     # set up the route
     get "/#{article.slug}" do
-      haml :post, :local => { article: article }
+      haml :post, :locals => { article: article }
     end
 
     # Add article to list of articles
