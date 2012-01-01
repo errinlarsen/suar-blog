@@ -1,4 +1,5 @@
 require "sinatra/base"
+require "json"
 require "time"
 
 class GithubHook < Sinatra::Base
@@ -19,6 +20,9 @@ class GithubHook < Sinatra::Base
   end
 
   post '/update' do
+    push = JSON.parse(params[:payload])
+    puts "I got some JSON: #{push.inspect}"
+
     settings.parse_git
 
     app.settings.reset!
@@ -27,7 +31,9 @@ class GithubHook < Sinatra::Base
     content_type :txt
     if settings.autopull?
       # Pipe stderr to stdout to make sure we display everything
-      `git pull 2>&1`
+      cmd_output = `git pull 2>&1`
+      puts "\nTrying to `git pull 2>&1` ..."
+      cmd_output
     else
       "ok"
     end
