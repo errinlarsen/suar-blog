@@ -18,5 +18,5 @@ Once the domain was all the way transferred, I set up the DNS to point to the Ra
 ## Server configuration
 Next up is configuring the new server ...
 
-
-  
+[part 1](http://blog.irkeninvader.com/installing_the_server-part_1) | [part
+2](http://blog.irkeninvader.com/installing_the_server-part_2)
