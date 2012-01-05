@@ -60,5 +60,5 @@ Next up, pulling the source, unpacking, compiling, and installing:
 ## See ya next time ...
 That's it for now.  I'll continue in part 3.
 
-[part 1](http://blog.irkeninvader.com/installing_the_server-part_1) | [part
-2](http://blog.irkeninvader.com/installing_the_server-part_2)
+[part 1](http://blog.irkeninvader.com/installing_the_server-part_1) | part
+2 | [part 3](http://blog.irkeninvader.com/installing_the_server-part_3)
