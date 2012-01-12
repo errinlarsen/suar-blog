@@ -27,20 +27,22 @@ class GithubHook < Sinatra::Base
     push = JSON.parse(params[:payload])
     puts "I got some JSON: #{push.inspect}"
 
+    retval = nil
+    if settings.autopull?
+      # Pipe stderr to stdout to make sure we display everything
+      puts "\nTrying to `git pull 2>&1` ..."
+      retval = `git pull 2>&1`
+      puts "`git pull 2>&1` reports:\n#{cmd_output}"
+    else
+      retval = "ok"
+    end
+
     settings.parse_git
 
     app.settings.reset!
     load app.settings.app_file
-
+    
     content_type :txt
-    if settings.autopull?
-      # Pipe stderr to stdout to make sure we display everything
-      puts "\nTrying to `git pull 2>&1` ..."
-      cmd_output = `git pull 2>&1`
-      puts "`git pull 2>&1` reports:\n#{cmd_output}"
-      cmd_output
-    else
-      "ok"
-    end
+    retval
   end
 end
