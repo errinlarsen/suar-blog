@@ -4,12 +4,7 @@ require "time"
 
 class GithubHook < Sinatra::Base
   def self.parse_git
-    # Parse hash and date from the git log command.
-    puts "I am running parse_git:"
     sha1, date = `git log HEAD~1..HEAD --pretty=format:%h^%ci`.strip.split('^')
-
-    puts "commit_hash = #{sha1}"
-    puts "commit_date = #{Time.parse(date)}"
     set :commit_hash, sha1
     set :commit_date, Time.parse(date)
   end
@@ -29,8 +24,6 @@ class GithubHook < Sinatra::Base
 
     cmd_output = "ok"
     if settings.autopull?
-      # Pipe stderr to stdout to make sure we display everything
-      puts "\nTrying to `git pull 2>&1` ..."
       cmd_output = `git pull 2>&1`
       puts "`git pull 2>&1` reports:\n#{cmd_output}"
     end
