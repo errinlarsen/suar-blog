@@ -119,8 +119,5 @@ With all that hooked up and the Thin server running, we can start up enable our 
 
 Now, when we visit http://blog.irkeninvader.com, we should see the blog!  Yay!
 
-## More to come ...
-That's it for now.  I'll continue in part 4.
-
 [part 1](http://blog.irkeninvader.com/installing_the_server-part_1) | [part
 2](http://blog.irkeninvader.com/installing_the_server-part_2) | part 3

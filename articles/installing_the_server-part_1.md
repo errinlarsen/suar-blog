@@ -4,7 +4,7 @@ date: 2011-12-31 10am
 ## Rackspace
 I created an account with [Rackspace](http://www.rackspace.com/) and started up the smallest server they offer.  The technical details are:
 
-    
+    _    
              RAM:  256 MB
       Disk Space:  10 GB
     Distribution:  Ubuntu 10.04 LTS (Lucid)

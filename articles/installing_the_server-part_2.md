@@ -8,7 +8,7 @@ This continues the record of my adventures in server building started in [part
 After standing up the server, my first step was to create a couple of useful
 users; one for me and one for web apps.
 
-    
+    _
     $ useradd elarsen
     $ passwd elarsen
     $ mkdir -p /home/elarsen/.ssh
@@ -22,7 +22,7 @@ After making sure I could login and get around with the elarsen user, I setup
 sudo.  I created a sudo group, added elarsen to that group, and then added the
 following line to the /etc/sudoers file:
 
-    
+    _
     %sudo ALL=(ALL) ALL
 
 Finally, I set up elarsen's .ssh/authorized_keys to allow me to login easily.
@@ -32,15 +32,15 @@ Obviously, I'm going to need Ruby.  I plan to pull down and compile the latest
 ruby 1.9.3-p0, so I'm going to need a lot of build-essential type packages.
 While I'm at it, I also want to grab some other essentials (like git, and
 screen).
-
     
+    _
     $ apt-get install build-essential bison openssl libreadline6 \
       libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev \
       libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev autoconf screen
 
 Next up, pulling the source, unpacking, compiling, and installing:
 
-    
+    _
     $ cd /usr/local/src
     $ wget http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
     $ tar xzvf yaml-0.1.4.tar.gz 
@@ -56,6 +56,13 @@ Next up, pulling the source, unpacking, compiling, and installing:
       --with-opt-dir=/usr/local/lib
     $ make && make install
 
+
+## Timezone
+Last, but not least, I correctly set the server's timezone.
+
+    _
+    # mv /etc/localtime /etc/localtime.orig
+    # ln -s /usr/share/zoneinfo/US/Central /etc/localtime
 
 ## See ya next time ...
 That's it for now.  I'll continue in part 3.
