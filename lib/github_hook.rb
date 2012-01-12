@@ -24,6 +24,9 @@ class GithubHook < Sinatra::Base
     puts "I got some JSON: #{push.inspect}"
 
     settings.parse_git
+    puts "I run parse_get:"
+    puts "commit_hash = #{settings.commit_hash}"
+    puts "commit_date = #{settings.commit_date}"
 
     app.settings.reset!
     load app.settings.app_file
