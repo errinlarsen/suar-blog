@@ -1,5 +1,5 @@
 title: Test
-date: 20121012 10:36am
+date: 2012-01-12 10:36am
 
 # Test
 This is just a test
