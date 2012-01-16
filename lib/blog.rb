@@ -16,7 +16,12 @@ class Blog < Sinatra::Base
     article = OpenStruct.new YAML.load(meta)
     article.date = Time.parse article.date.to_s
     article.content = content
+    
     article.slug = File.basename(file, ".md")
+
+    summary = content.split("\n").first(10)
+    article.has_more = true if summary.size >= 10
+    article.summary = summary.join("\n")
 
     get "/#{article.slug}" do
       haml :post, :locals => { article: article }
